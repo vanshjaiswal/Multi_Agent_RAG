@@ -30,13 +30,13 @@ class RouteQuery(BaseModel):
         description="Given a user question choose to route it to wikipedia or a vectorstore.",
     )
 
-ASTRA_DB_APPLICATION_TOKEN="AstraCS:hkESJXfcHwzEeZwHAfZRDLHz:f914b4b59591437f6e47a7ca03619cdd721327f495bfb1d2016386521c29a86a" # enter the "AstraCS:..." string found in in your Token JSON file"
-ASTRA_DB_ID="c18bcdff-a60f-4bb3-a280-72903b6ce92f"
+ASTRA_DB_APPLICATION_TOKEN="<Enter Astra DB Token>" # enter the "AstraCS:..." string found in in your Token JSON file"
+ASTRA_DB_ID="<Enter the Astra DB ID>"
 cassio.init(token=ASTRA_DB_APPLICATION_TOKEN,database_id=ASTRA_DB_ID)
 
 
 # LLM with function call
-groq_api_key='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'
+groq_api_key='<Enter GROQ API KEY>'
 llm=ChatGroq(groq_api_key=groq_api_key,model_name="llama-3.1-70b-versatile")
 structured_llm_router = llm.with_structured_output(RouteQuery)
 
